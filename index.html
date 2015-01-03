@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+
+<html lang="nb" data-ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=width, initial-scale=1.0">
+    <meta name="author" content="Argtang">
+    <link rel="stylesheet" href="CSS/style.css">
+    <title>Tangoskolen</title>
+</head>
+<body>
+
+   <header>
+       <h1>Tangoskolen.no</h1>
+   </header>
+
+    <nav>
+        <ul>
+            <li><a data-ui-sref="hjem" data-ui-sref-active="active">Hjem</a></li>
+            <li><a data-ui-sref="kurstilbud" data-ui-sref-active="active">kurstilbud</a></li>
+            <li><img src="Pictures/tango3.png"></li>
+            <li><a data-ui-sref="utådanse" data-ui-sref-active="active">Ut å danse</a></li>
+            <li><a data-ui-sref="omoss" data-ui-sref-active="active">Om oss</a></li>
+        </ul>
+    </nav>
+
+    <div class="contentwrapper">
+        <div data-ui-view></div>
+    </div>
+
+    <footer>
+        <p>kontank oss på: info@tangoskolen.no</p>
+        <p>Meld deg gjerne på vår mailingliste for å få informasjon og nyhetsbrev <a href="http://www.tangoskolen.no/web/Main/Nyhetsbrev">Klikk her</a></p>
+    </footer>
+
+</body>
+<script src="js/angular.js"></script>
+<script src="js/angular-ui-router.min.js"></script>
+<script src="js/main.js"></script>
+<script src="js/app.js"></script>
+</html>

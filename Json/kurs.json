@@ -1,0 +1,41 @@
+[
+  {
+    "kurs": "nivå 1",
+    "info": "Kurset er et nybegynnerkurs over åtte kvelder, hvor hver kveld består av 1 time og 20 minutter undervisning og 20 minutter øving etterpå. Kurset krever ingen forkunnskaper og det er ikke nødvendig å ha danset før. Kurset gir en grunnleggende innføring i Argentinsk Tango, med føring, følging og musikalitet.",
+    "Kursstart": "tirsdag 3. februar",
+    "tid": "kl.18.00 - 19.40",
+    "Varighet": 8,
+    "pris": 2000,
+    "Instruktorer": "ikke bestemt"
+  },
+
+  {
+    "kurs": "nivå 2",
+    "info": "Kurset går over åtte kvelder og bygger videre på Nivå 1. Hvis du ikke har gått Nivå 1 hos Tangoskolen og vil melde deg på Nivå 2, er det fint om du har kjennskap til føring/følging, improvisasjon, ochos og kryss.",
+    "Kursstart": "tirsdag 3. februar",
+    "tid": "kl.19.20 - 21.00",
+    "Varighet": 8,
+    "pris": 2000,
+    "Instruktorer": "ikke bestemt"
+  },
+
+  {
+    "kurs": "nivå 3",
+    "info": "Kurset går over åtte kvelder og inneholder noen av de mest brukte elementene i tango. For å melde deg på dette kurset bør du ha gått nivå 2 hos Tangoskolen, eller ha danset og gått på kurs andre steder. Du trenger å ha ganske god balanse i tillegg til en god posjon grunnteknikk i ryggmargen. Du mestrer å føre/følge ocho, giro, kryss, forskjellige takter og kanskje en enkel sacada. Du har også kanskje vært borti tangovals, milonga og nær omfavnelse.",
+    "Kursstart": "tirsdag 3. februar",
+    "tid": "kl.18.00 - 19.40",
+    "Varighet": 8,
+    "pris": 2000,
+    "Instruktorer": "ikke bestemt"
+  },
+
+  {
+    "kurs": "nivå 4",
+    "info": "Kurset går over åtte kvelder og inneholder flere av de mest brukte elementene i tango. Nivå 4 har en høyere vanskelighetsgrad enn Nivå 3, og kan fint tas flere ganger da kurset vil være ulikt fra et semester til et annet. Om du vil gå Nivå 4 er det en fordel om  allerede mestrer Nivå 2 og 3, og i tillegg har øvet deg på tango også utenfor kurs, og har dermed danset noen kilometer under beina. Du er komfortabel med nær omfavnelse, selv om du kanskje ikke alltid får det til.",
+    "Kursstart": "tirsdag 3. februar",
+    "tid": "kl.19.20 - 21.00",
+    "Varighet": 8,
+    "pris": 2000,
+    "Instruktorer": "ikke bestemt"
+  }
+]

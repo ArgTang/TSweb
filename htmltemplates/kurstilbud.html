@@ -1,0 +1,39 @@
+
+
+
+<div id="kurswrapper" data-ng-init="init()">
+    <h1>Dette er kursene våre:</h1>
+
+    <div id="kurscontentwrapper">
+        <ul id="left">
+           <li data-ng-repeat="kurs in kursene"><a data-ui-sref="kurstilbud({navn:kursene[$index].kurs})" data-ui-sref-active="active" data-ng-click="menyklikk($index)">{{kurs.kurs}}</a></li>
+        </ul>
+
+        <section id="right">
+            <p> <span>kurstid</span> {{kursene[aktiv].tid}}, {{kursene[aktiv].Varighet}} ganger fra {{kursene[aktiv].Kursstart}}</p>
+            <p> <span>info</span> {{kursene[aktiv].info}}</p>
+            <p> <span>Pris</span> {{kursene[aktiv].pris | number:0}}</p>
+            <p> <span>Instruktører</span> {{kursene[aktiv].Instruktorer}}</p>
+
+            <button type="button" onclick="alert('Hello world!')">Jeg vil melde meg på</button>
+
+        </section>
+
+        <div class="skjemavindu md-effect-1" id="modal-1">
+            <section class="påmeldingskjema">
+                <h3>Påmeldingsskjema for {{kursene[aktiv].kurs}}</h3>
+                <div>
+                    <p>This is a modal window. You can do the following things with it:</p>
+                    <ul>
+                        <li><span>Read:</span> Modal windows will probably tell you something important so don't forget to read what it says.</li>
+                        <li><span>Look:</span> modal windows enjoy a certain kind of attention; just look at it and appreciate its presence.</li>
+                        <li><span>Close:</span> click on the button below to close the modal.</li>
+                    </ul>
+                    <button class="md-close">Close me!</button>
+                </div>
+            </section>
+        </div>
+        <div class="skjema-overlay"></div>
+    </div>
+</div>
+
