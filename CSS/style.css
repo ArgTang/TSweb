@@ -24,7 +24,7 @@ nav ul{
     flex-flow: row nowrap;
     list-style: none;
     justify-content: center;
-    align-items:center;
+    align-items: center;
 }
 
 nav li{
@@ -95,6 +95,7 @@ footer{
     left: 0;
     z-index: 1000;
     opacity: 0;
+    background: rgb(143,27,15);
     background: rgba(143,27,15,0.8);
     transition: all 0.3s;
 }
