@@ -19,7 +19,7 @@ angular
                 url: 'kurstilbud/{navn}',
                 templateUrl: 'htmltemplates/kurstilbud.html',
                 controller: 'kurscontroller',
-            }})
+            })
 
             .state('utådanse', {
                 url: '/utådanse',
