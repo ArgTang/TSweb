@@ -3,7 +3,7 @@
 
     <div id="kurscontentwrapper">
         <ul id="left">
-           <li data-ng-repeat="kurs in kursene"><a data-ui-sref="kurstilbud({navn:kursene[$index].kurs})" data-ui-sref-active="active" data-ng-click="menyklikk($index)">{{kurs.kurs}}</a></li>
+           <li data-ng-repeat="kurs in kursene"><a data-ui-sref="kurstilbud({navn:kursene[$index].daddr})" data-ui-sref-active="active" data-ng-click="menyklikk($index)">{{kurs.kurs}}</a></li>
         </ul>
 
         <section id="right">

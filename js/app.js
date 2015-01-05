@@ -16,12 +16,11 @@ angular
             })
 
             .state('kurstilbud', {
-                url: '/kurstilbud/{navn} ',
+                url: 'kurstilbud/{navn}',
                 templateUrl: 'htmltemplates/kurstilbud.html',
                 controller: 'kurscontroller',
                 resolve: {
                     //promiseKurs: function ($http) {console.log("resolve"); return $http({method: 'GET', url: '/json/kurs.json'})}}
-
                     //promiseKurs: function (Kursene) {console.log("resolve");return Kursene.getItems().then(function (response) {return response.data;});}
             }})
 /*
@@ -53,7 +52,7 @@ angular
         $scope.aktiv = 0;
         //$scope.kursene = promiseKurs.data;
         $scope.kursene = $rootScope.kursene
-
+        console.log($scope.kursene);
         $scope.menyklikk = function (nummer) {
             console.log("nummer " + nummer);
             $scope.aktiv = nummer;
