@@ -1,28 +1,31 @@
 angular
     .module('app', ['ui.router'])
-    .run(function($rootScope, Kursene){Kursene.getKurs().then(function (data) { //call fttp factory and injects into $scope
-            console.log(".run");
-            $rootScope.kursene = data;
-    });})
+    .run(
+        function ($rootScope, $http) {
+            $http({method: 'GET', url: '/json/kurs.json'}).then(
+                function (data) {
+                    console.log(".run");
+                    $rootScope.kursene = data.data;
+            });
+    })
 
     .config(['$urlRouterProvider', '$stateProvider', function ($urlRouterProvider, $stateProvider) {
-        console.log("start");
-        $urlRouterProvider.otherwise(''); //default
+        $urlRouterProvider.otherwise('/hjem'); //default
 
         $stateProvider
             .state('hjem', {
-                url: '',
+                url: '/hjem',
                 templateUrl: 'htmltemplates/hjem.html'
             })
 
             .state('kurstilbud', {
-                url: 'kurstilbud/{navn}',
+                url: '/kurstilbud/:kursnavn', ///:pamelding',
                 templateUrl: 'htmltemplates/kurstilbud.html',
-                controller: 'kurscontroller',
+                controller: 'kurscontroller'
             })
 
-            .state('utådanse', {
-                url: '/utådanse',
+            .state('utadanse', {
+                url: '/utadanse',
                 templateUrl: 'htmltemplates/utådanse.html'
             })
             .state('omoss', {
@@ -35,33 +38,29 @@ angular
 
 angular
     .module('app')
-    .controller('kurscontroller', ['$scope', '$rootScope', function ($scope, $rootScope) {
+    .controller('kurscontroller', ['$scope', '$rootScope', '$stateParams', '$state', function ($scope, $rootScope, $stateParams, $state) {
         console.log("kurscontroller");
 
-        //init
-        $scope.aktiv = 0; //default kursselector
-        $scope.kursene = $rootScope.kursene
+
+        //loop for svolving url
+        if($stateParams.kursnavn === "") {
+            $state.go('kurstilbud', {kursnavn: $scope.kursene[0].daddr})
+            $scope.aktiv = 0;
+            console.log("3: "+$scope.aktiv);
+        } else {
+            for(var i=0; i < $rootScope.kursene.length; i++) {
+                if ($stateParams.kursnavn === $rootScope.kursene[i].daddr) {
+                    console.log(i);
+                    $scope.aktiv = i;
+                    break;
+                }
+            }
+        }
+
+        $scope.kursene = $rootScope.kursene;
         console.log($scope.kursene);
 
-        $scope.menyklikk = function (nummer) {
-            // function for changing shown kurs
-            console.log("menyklikk");
-            $scope.aktiv = nummer;;
-        };
-
         $scope.hentskjema = function () {
-            //function for showing påmeldings popup
             console.log("hentskjema");
         };
-    }]);
-
-/*------------------- Kursene factory ($http) ----------------------*/
-
-angular //http request instance
-    .module('app')
-    .factory('Kursene', ['$http', function($http) {
-        return {
-            getKurs: function () { // log to console before returning data
-                return $http.get('json/kurs.json').then(function (response) {
-                    console.log("kursene factory: "); return response.data; });}};
     }]);

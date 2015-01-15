@@ -1,9 +1,8 @@
 <div id="kurswrapper">
     <h1>Dette er kursene våre:</h1>
-
     <div id="kurscontentwrapper">
         <ul id="left">
-           <li data-ng-repeat="kurs in kursene"><a data-ui-sref="kurstilbud({navn:kursene[$index].daddr})" data-ui-sref-active="active" data-ng-click="menyklikk($index)">{{kurs.kurs}}</a></li>
+            <li data-ng-repeat="kurs in kursene"><a data-ui-sref="kurstilbud({kursnavn:kursene[$index].daddr})" data-ui-sref-active="active">{{kurs.kurs}}</a></li>
         </ul>
 
         <section id="right">
@@ -12,11 +11,11 @@
             <p> <span>Pris</span> {{kursene[aktiv].pris | number:0}}</p>
             <p> <span>Instruktører</span> {{kursene[aktiv].Instruktorer}}</p>
 
-            <button type="button" onclick="alert('Hello world!')">Jeg vil melde meg på</button>
+            <button onclick="alert('Hello world!')">Jeg vil melde meg på</button>
 
         </section>
 
-        <div class="skjemavindu md-effect-1" id="modal-1">
+<!--        <div class="skjemavindu md-effect-1" id="modal-1">
             <section class="påmeldingskjema">
                 <h3>Påmeldingsskjema for {{kursene[aktiv].kurs}}</h3>
                 <div>
@@ -30,6 +29,6 @@
                 </div>
             </section>
         </div>
-        <div class="skjema-overlay"></div>
+        <div class="skjema-overlay"></div>-->
     </div>
 </div>
