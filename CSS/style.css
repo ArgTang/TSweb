@@ -156,7 +156,7 @@ footer{
     margin: 5px;
     padding: 1%;
     text-align: left;
-    z-index: -1;
+    /*z-index: -1; /*this makes buttons dissapear*/
 }
 
 #right span{ font-size: 1.2rem; font-weight: 600;}
@@ -169,8 +169,7 @@ footer{
     padding: 0.3rem;
     border: 0;
 }
-
- button:hover{cursor: pointer;}
+button:hover{cursor: pointer;}
 
 /*------------------ utådanse -----------------------*/
 .utadansewrapper{
