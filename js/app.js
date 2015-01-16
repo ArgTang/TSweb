@@ -46,7 +46,7 @@ angular
         document.getElementById("left").style.height = ($rootScope.kursene.length*2 + 12) + 'rem';
         //loop for solving url and kursviewed ($scope.aktiv)
         if($stateParams.kursnavn === "") {
-            $state.go('kurstilbud', {kursnavn: $rootScope.kursene[0].daddr}, {location: false})
+            $state.go('kurstilbud', {kursnavn: $rootScope.kursene[0].daddr}, {notify: false})
             $scope.aktiv = 0;
         } else {
             for(var i=0; i < $rootScope.kursene.length; i++) {
