@@ -1,16 +1,15 @@
 angular
     .module('app', ['ui.router'])
-    .run(
-        function ($rootScope, $http) {
+    .run(['$rootScope', '$http', function ($rootScope, $http) {
             $http({method: 'GET', url: '/json/kurs.json'}).then(
                 function (data) {
                     console.log(".run");
                     $rootScope.kursene = data.data;
             });
-    })
+    }])
 
     .config(['$urlRouterProvider', '$stateProvider', function ($urlRouterProvider, $stateProvider) {
-        $urlRouterProvider.otherwise('/hjem'); //default
+        $urlRouterProvider.otherwise('/hjem');
 
         $stateProvider
             .state('hjem', {
@@ -19,9 +18,13 @@ angular
             })
 
             .state('kurstilbud', {
-                url: '/kurstilbud/:kursnavn', ///:pamelding',
+                url: '/kurstilbud/:kursnavn',
                 templateUrl: 'htmltemplates/kurstilbud.html',
                 controller: 'kurscontroller'
+            })
+
+            .state('kurstilbud.pamelding',{
+                url: '/pamelding'
             })
 
             .state('utadanse', {
@@ -40,17 +43,14 @@ angular
     .module('app')
     .controller('kurscontroller', ['$scope', '$rootScope', '$stateParams', '$state', function ($scope, $rootScope, $stateParams, $state) {
         console.log("kurscontroller");
-
-
-        //loop for svolving url
+        document.getElementById("left").style.height = ($rootScope.kursene.length*2 + 12) + 'rem';
+        //loop for solving url and kursviewed ($scope.aktiv)
         if($stateParams.kursnavn === "") {
-            $state.go('kurstilbud', {kursnavn: $scope.kursene[0].daddr})
+            $state.go('kurstilbud', {kursnavn: $rootScope.kursene[0].daddr}, {location: false})
             $scope.aktiv = 0;
-            console.log("3: "+$scope.aktiv);
         } else {
             for(var i=0; i < $rootScope.kursene.length; i++) {
                 if ($stateParams.kursnavn === $rootScope.kursene[i].daddr) {
-                    console.log(i);
                     $scope.aktiv = i;
                     break;
                 }
