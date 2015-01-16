@@ -125,6 +125,7 @@ footer{
     padding: 1%;
     list-style: none;
     text-align: center;
+    z-index: 1;
 }
 
 #left li a{
@@ -156,7 +157,6 @@ footer{
     margin: 5px;
     padding: 1%;
     text-align: left;
-    /*z-index: -1; /*this makes buttons dissapear*/
 }
 
 #right span{ font-size: 1.2rem; font-weight: 600;}
