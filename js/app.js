@@ -22,8 +22,7 @@ angular
                 templateUrl: 'htmltemplates/kurstilbud.html',
                 controller: 'kurscontroller'
             })
-
-            .state('kurstilbud.pamelding',{
+            .state('kurstilbud.pamelding', {
                 url: '/pamelding'
             })
 
@@ -31,6 +30,7 @@ angular
                 url: '/utadanse',
                 templateUrl: 'htmltemplates/utådanse.html'
             })
+
             .state('omoss', {
                 url: '/omoss',
                 templateUrl: 'htmltemplates/omoss.html'
@@ -46,7 +46,7 @@ angular
         document.getElementById("left").style.height = ($rootScope.kursene.length*2 + 12) + 'rem';
         //loop for solving url and kursviewed ($scope.aktiv)
         if($stateParams.kursnavn === "") {
-            $state.go('kurstilbud', {kursnavn: $rootScope.kursene[0].daddr}, {notify: false})
+            $state.go('kurstilbud', {kursnavn: $rootScope.kursene[0].daddr}, {notify: false});
             $scope.aktiv = 0;
         } else {
             for(var i=0; i < $rootScope.kursene.length; i++) {
