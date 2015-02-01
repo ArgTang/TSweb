@@ -52,6 +52,10 @@ angular
             for(var i=0; i < $rootScope.kursene.length; i++) {
                 if ($stateParams.kursnavn === $rootScope.kursene[i].daddr) {
                     $scope.aktiv = i;
+                    console.log("stateparams");
+                    console.log($stateParams);
+                    if ($stateParams.pamelding != "")
+                        $scope.visskjema= true;
                     break;
                 }
             }
@@ -62,5 +66,5 @@ angular
 
         $scope.hentskjema = function () {
             console.log("hentskjema");
-        };
+        }
     }]);

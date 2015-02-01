@@ -10,25 +10,29 @@
             <p> <span>info</span> {{kursene[aktiv].info}}</p>
             <p> <span>Pris</span> {{kursene[aktiv].pris | number:0}}</p>
             <p> <span>Instruktører</span> {{kursene[aktiv].Instruktorer}}</p>
-
-            <button onclick="alert('Hello world!')">Jeg vil melde meg på</button>
-
+            <button data-ui-sref="pamelding">Jeg vil melde meg på</button>
         </section>
-
-<!--        <div class="skjemavindu md-effect-1" id="modal-1">
-            <section class="påmeldingskjema">
-                <h3>Påmeldingsskjema for {{kursene[aktiv].kurs}}</h3>
-                <div>
-                    <p>This is a modal window. You can do the following things with it:</p>
-                    <ul>
-                        <li><span>Read:</span> Modal windows will probably tell you something important so don't forget to read what it says.</li>
-                        <li><span>Look:</span> modal windows enjoy a certain kind of attention; just look at it and appreciate its presence.</li>
-                        <li><span>Close:</span> click on the button below to close the modal.</li>
-                    </ul>
-                    <button class="md-close">Close me!</button>
-                </div>
-            </section>
-        </div>
-        <div class="skjema-overlay"></div>-->
     </div>
 </div>
+
+<div ng-if="visskjema=true" class="skjemavindu md-effect-1" id="modal">
+    <section class="påmeldingskjema">
+        <h3>Påmeldingsskjema for {{kursene[aktiv].kurs}}</h3>
+            <form name="påmelding" novalidate>
+            <p><input type="email" ng-model="påmelding.email" placeholder="Email:" required/></p>
+            <p><input type="text" ng-model="påmelding.navn" placeholder="fornavn + etternavn" required/></p>
+            <p>fører\følger <input type="checkbox" ng-model="påmelding.forer" name="forer" required ng-true-value="fører" ng-false-value="følger"/></p>
+            <p><input type="number" ng-model="påmelding.tlf" placeholder="Telefonnummer" ng-minlength="8" ng-maxlength="8"</p>
+            <p><input type="checkbox" ng-model="påmelding.partner" name="partner"/>Jeg vil melde også melde på en Partner</p>
+            <div ng-if="form.partner">
+                <p><input type="text" ng-model="påmelding.partnerfornavn" placeholder="fornavn + etternavn" required/></p>
+                <p><input type="email" ng-model="påmelding.partneremail" placeholder="Email:"/></p>
+            </div>
+            <p><input type="checkbox" ng-model="påmelding.vikar" name="vikar"/>Jeg kan være med som ringevikar!</p>
+            <p><input type="checkbox" ng-model="påmelding.nyhetsmail" name="nyhetsmail"/>Jeg vil ha nyhetsmail fra Tangoskolen!</p>
+            <button class="md-close">Meld meg på</button>
+            </form>
+        </div>
+    </section>
+</div>
+<div class="skjema-overlay"></div>
